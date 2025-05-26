@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Karem App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">Karem App</h1>
+    <nav>
+      <button onclick="showSection('posts')">المنشورات</button>
+      <button onclick="showSection('addPost')">إضافة غرض</button>
+      <button onclick="showSection('chat')">محادثة</button>
+      <button onclick="showSection('adminLogin')">تسجيل إداري</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="posts" class="section active">
+      <h2>المنشورات</h2>
+      <div id="postList"></div>
+    </section>
+
+    <section id="addPost" class="section">
+      <h2>إضافة غرض</h2>
+      <input type="text" id="itemTitle" placeholder="اسم الغرض">
+      <input type="text" id="city" placeholder="المدينة">
+      <textarea id="itemDesc" placeholder="وصف الغرض"></textarea>
+      <input type="file" id="itemImage">
+      <button onclick="submitPost()">إرسال الطلب</button>
+    </section>
+
+    <section id="chat" class="section">
+      <h2>محادثة مع الإدارة</h2>
+      <div id="chatBox"></div>
+      <input type="text" id="chatInput" placeholder="اكتب رسالة...">
+      <button onclick="sendMessage()">إرسال</button>
+    </section>
+
+    <section id="adminLogin" class="section">
+      <h2>تسجيل دخول الإداري</h2>
+      <input type="password" id="adminPass" placeholder="كلمة السر">
+      <button onclick="loginAdmin()">دخول</button>
+    </section>
+
+    <section id="adminPanel" class="section">
+      <h2>لوحة تحكم الإداري</h2>
+      <div id="adminPosts"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
